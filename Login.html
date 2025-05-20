@@ -1,0 +1,99 @@
+
+<html>
+<head>
+<style>body { background-image: url("background2.jpg");
+ background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url("background2.jpg");}
+td{font-family: centaur; font-size: 25px; color:white;}
+
+</style>
+  <script>
+    function validate()
+ {
+      var Email = f1.email.value;
+      var at = Email.indexOf("@");
+      var dot = Email.lastIndexOf(".");
+
+      if (f1.firstName.value == "") {
+        alert("Please provide your First Name! It cannot be blank!");
+        f1.firstName.focus();
+        return false;
+      }
+      if (f1.lastName.value == "") {
+        alert("Please provide your Last Name! It cannot be blank!");
+        f1.lastName.focus();
+        return false;
+      }
+      if (at < 1 || (dot - at < 2)) {
+        alert("Please enter a correct email ID (e.g., yourname@domain.com)");
+        f1.email.focus();
+        return false;
+      }
+      if (f1.contactNo.value == "" || isNaN(f1.contactNo.value) || f1.contactNo.value.length !== 10) {
+        alert("Please provide your mobile number. Only 10 digits are allowed.");
+        f1.contactNo.focus();
+        return false;
+      }
+      if (f1.batch.value === "") {
+        alert("Please provide your Batch! It cannot be left blank.");
+        f1.batch.focus();
+        return false;
+      }
+      if (f1.time.value === "") {
+        alert("Please provide your Time! It cannot be left blank.");
+        f1.time.focus();
+        return false;
+      }
+      if (f1.timing.value === "") {
+        alert("Please provide your Timing! It cannot be left blank.");
+        f1.timing.focus();
+        return false;
+      }
+      if (f1.age.value === "" || isNaN(f1.age.value) || f1.age.value.length !== 08) {
+        alert("Please provide your Age! It cannot be left blank.");
+        f1.age.focus();
+        return false;
+      }
+    }
+  </script>
+</head>
+<body><font color="white">
+<h1>Enroll Now</h1></font>
+  <form method="post" action="reply.html" name="f1" onSubmit="return validate();">
+    <table>
+      <tr><td>First Name:</td><td><input type="text" name="firstName"></td></tr>
+      <tr><td>Last Name:</td><td><input type="text" name="lastName"></td></tr>
+      <tr><td>Email ID:</td><td><input type="text" name="email"></td></tr>
+      <tr><td>Contact No:</td><td><input type="text" name="contactNo"></td></tr>
+      <tr><td>Batch:</td><td>
+        <select name="batch">
+          <option value=""></option>
+          <option value="an">Coed</option>
+          <option value="a">Ladies</option>
+          <option value="p">Golden Card</option>
+        </select>
+      </td></tr>
+<tr><td>Time:</td><td>
+<select name="time">
+          <option value=""></option>
+          <option value="a">Morning</option>
+          <option value="tf">Evening</option>
+        </select>
+      </td></tr>
+      
+      <tr><td>Timing:</td><td>
+<select name="batch">
+          <option value=""></option>
+          <option value="mh">1st</option>
+          <option value="nh">2nd</option>
+          <option value="kh">3rd</option>
+<option value="ln">4th</option>
+        </select>
+      </td></tr>
+
+      <tr><td>Age:</td><td><input type="number" name="age"></td></tr>
+      <tr><td><input type="SUBMIT" value="Save Data"></td>
+        <td><input type="RESET" value="Clear Data"></td></tr>
+    </table>
+  </form>
+</body>
+</html>
